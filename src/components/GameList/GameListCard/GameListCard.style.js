@@ -1,6 +1,15 @@
 import styled from 'styled-components'
 
 export const GameListCardStyle = styled.div`
+  @keyframes blink {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   flex: 1;
   min-width: 300px;
   height: min-content;
@@ -11,6 +20,7 @@ export const GameListCardStyle = styled.div`
   transform: perspective(100vmax) translateZ(0) rotateX(0);
   transition: box-shadow 500ms, transform 500ms;
   border-radius: 10px 10px 0 0;
+  animation: blink ${props => props.animation * 500}ms forwards;
 
   &:hover {
     box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.4);
@@ -39,7 +49,6 @@ export const GameListCardStyle = styled.div`
       rgba(0, 0, 0, 0) 0%,
       rgba(0, 0, 0, 0.65) 50%
     );
-    z-index: 1;
   }
 
   h3 {
@@ -51,7 +60,6 @@ export const GameListCardStyle = styled.div`
     background: #000;
     padding: 5px;
     border-radius: 5px;
-    z-index: 1;
   }
 
   .bottom-info {
@@ -76,7 +84,7 @@ export const GameListCardStyle = styled.div`
       color: rgba(14, 14, 14, 0.2);
 
       font-size: 12rem;
-      z-index: 0;
+      z-index: -1;
       line-height: 1em;
 
       @supports (-webkit-text-stroke: 1px black) {

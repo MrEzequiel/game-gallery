@@ -16,8 +16,12 @@ function GameList() {
   function renderGameList() {
     return (
       <GameListContainer>
-        {data.results.map(result => (
-          <GameListCard key={result.id} information={result} />
+        {data.results.map((result, index) => (
+          <GameListCard
+            key={result.id}
+            information={result}
+            counter={index + 1}
+          />
         ))}
       </GameListContainer>
     )

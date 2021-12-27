@@ -2,8 +2,8 @@ import React from 'react'
 
 import { GameListCardStyle } from './GameListCard.style'
 
-function GameListCard({ information }) {
-  console.log(information)
+function GameListCard({ information, counter }) {
+  console.log(counter)
 
   let date = new Date(information.released)
   date = date.toLocaleDateString('en-US')
@@ -16,7 +16,10 @@ function GameListCard({ information }) {
   })
 
   return (
-    <GameListCardStyle border={'#' + information.dominant_color}>
+    <GameListCardStyle
+      border={'#' + information.dominant_color}
+      animation={counter}
+    >
       <img
         src={information.background_image}
         alt={information.name + ' image'}
