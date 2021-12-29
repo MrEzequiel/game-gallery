@@ -103,6 +103,10 @@ export const GameListCardStyle = styled.div`
         padding: 5px;
         border-radius: 5px;
         background: #0e0e0e;
+
+        &:hover {
+          color: #b2b2b2;
+        }
       }
     }
   }

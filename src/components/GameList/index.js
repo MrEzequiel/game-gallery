@@ -3,37 +3,43 @@ import useFetch from '../../hooks/useFetch'
 
 import { MainContainer } from './GameList.style'
 import GameListCard from './GameListCard'
+import GameListCardLoading from './GameListCardLoading'
 import GameListContainer from './GameListContainer'
+import GameListError from './GameListError'
 
 function GameList() {
-  const { request, data, loading } = useFetch()
-  const apiKey = process.env.REACT_APP_KEY_API
+  const { request, data, loading, error } = useFetch()
 
   React.useEffect(() => {
-    request(`https://api.rawg.io/api/games?key=${apiKey}`)
-  }, [request, apiKey])
+    const apiKey = process.env.REACT_APP_KEY_API
+
+    async function fetchData() {
+      request(`https://api.rawg.io/api/games?key=${apiKey}`)
+    }
+    fetchData()
+  }, [request])
 
   function renderGameList() {
-    return (
-      <GameListContainer>
-        {data.results.map((result, index) => (
-          <GameListCard
-            key={result.id}
-            information={result}
-            counter={index + 1}
-          />
-        ))}
-      </GameListContainer>
-    )
+    return data.results.map((result, index) => (
+      <GameListCard key={result.id} information={result} counter={index + 1} />
+    ))
   }
 
   return (
     <MainContainer>
       <h1>Popular games:</h1>
 
-      {!!loading && <p>Loading...</p>}
+      <GameListContainer>
+        {!!loading && (
+          <>
+            <GameListCardLoading /> <GameListCardLoading />{' '}
+          </>
+        )}
 
-      {!!data && renderGameList()}
+        {!!data && renderGameList()}
+
+        {!!error && <GameListError />}
+      </GameListContainer>
     </MainContainer>
   )
 }
