@@ -19,6 +19,7 @@ export const GameListCardStyle = styled.div`
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
   transform: perspective(100vmax) translateZ(0) rotateX(0);
   transition: box-shadow 500ms, transform 500ms;
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
   border-radius: 10px 10px 0 0;
   animation: blink ${props => props.animation * 500}ms forwards;
 

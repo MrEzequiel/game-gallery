@@ -21,6 +21,7 @@ function GameListCard({ information, counter }) {
       <img
         src={information.background_image}
         alt={information.name + ' image'}
+        loading="lazy"
       />
       <h3>{information.name}</h3>
 

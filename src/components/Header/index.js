@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { HeaderContainer } from './Header.style'
+import ToggleInput from './Toggle'
 
 function Header() {
   return (
@@ -8,6 +9,7 @@ function Header() {
       <h1>
         <a href="/">Game Gallery</a>
       </h1>
+      <ToggleInput />
     </HeaderContainer>
   )
 }
