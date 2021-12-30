@@ -3,8 +3,6 @@ import React from 'react'
 import { GameListCardStyle } from './GameListCard.style'
 
 function GameListCard({ information, counter }) {
-  console.log(counter)
-
   let date = new Date(information.released)
   date = date.toLocaleDateString('en-US')
 
@@ -49,4 +47,4 @@ function GameListCard({ information, counter }) {
   )
 }
 
-export default GameListCard
+export default React.memo(GameListCard)

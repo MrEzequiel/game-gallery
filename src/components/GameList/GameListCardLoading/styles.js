@@ -1,9 +1,13 @@
 import styled from 'styled-components'
 
 export const GameListLoadingStyle = styled.div`
-  width: 250px;
-  height: 300px;
+  width: 300px;
+  height: 350px;
   overflow: hidden;
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 
   background: #1a1a1a;
   border-radius: 10px 10px 0 0;
@@ -23,7 +27,7 @@ export const GameListLoadingStyle = styled.div`
   }
 
   .top-card {
-    height: 125px;
+    height: 175px;
   }
 
   .mid-card {
