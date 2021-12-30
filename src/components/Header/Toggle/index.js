@@ -11,13 +11,17 @@ function ToggleInput() {
   const contextTheme = React.useContext(ThemeContext)
 
   const [toggle, setToggle] = React.useState(
-    contextTheme.title === 'dark' ? false : true
+    contextTheme.theme.title === 'dark' ? true : false
   )
+  console.log(toggle)
 
   const handleOnChange = () => {
     setToggle(prev => !prev)
-    contextTheme.setTheme(toggle ? lightTheme : darkTheme)
   }
+
+  React.useEffect(() => {
+    contextTheme.setTheme(toggle ? darkTheme : lightTheme)
+  }, [toggle, contextTheme])
 
   return (
     <ToggleStyle>
