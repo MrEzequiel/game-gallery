@@ -9,7 +9,7 @@ export const GameListLoadingStyle = styled.div`
     width: 100%;
   }
 
-  background: #1a1a1a;
+  background: ${props => props.theme.colors.g2};
   border-radius: 10px 10px 0 0;
 
   @keyframes shine {
@@ -19,9 +19,14 @@ export const GameListLoadingStyle = styled.div`
   }
 
   & > div {
-    background: #2e2e2e;
+    background: ${props => props.theme.colors.g3};
 
-    background: linear-gradient(110deg, #404040 8%, #3c3c3c 18%, #404040 33%);
+    background: linear-gradient(
+      110deg,
+      ${props => props.theme.colors.g4} 8%,
+      ${props => props.theme.colors.g2} 18%,
+      ${props => props.theme.colors.g4} 33%
+    );
     background-size: 200% 100%;
     animation: 1.5s shine linear infinite;
   }

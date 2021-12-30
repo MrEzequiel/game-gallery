@@ -14,7 +14,7 @@ export const GameListCardStyle = styled.div`
   min-width: 300px;
   height: min-content;
   border: 1px solid ${props => props.border};
-  background: #1a1a1a;
+  background: ${props => props.theme.colors.g2};
   overflow: hidden;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
   transform: perspective(100vmax) translateZ(0) rotateX(0);
@@ -32,7 +32,7 @@ export const GameListCardStyle = styled.div`
       mask-image: linear-gradient(
         to top,
         rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.65) 40%
+        rgba(0, 0, 0, 0.8) 50%
       );
     }
   }
@@ -48,7 +48,7 @@ export const GameListCardStyle = styled.div`
     mask-image: linear-gradient(
       to top,
       rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.65) 50%
+      rgba(0, 0, 0, 0.8) 60%
     );
   }
 
@@ -58,7 +58,7 @@ export const GameListCardStyle = styled.div`
     max-width: 80%;
     margin: 0 auto;
     text-align: center;
-    background: #000;
+    background: ${props => props.theme.colors.max};
     padding: 5px;
     border-radius: 5px;
   }
@@ -67,10 +67,10 @@ export const GameListCardStyle = styled.div`
     position: relative;
     padding: 0 20px 20px;
     margin-top: 10px;
-    color: #717171;
+    color: ${props => props.theme.colors.g7};
 
     strong {
-      color: #b2b2b2;
+      color: ${props => props.theme.colors.g8};
     }
 
     p + p {
@@ -82,15 +82,20 @@ export const GameListCardStyle = styled.div`
       position: absolute;
       bottom: 0;
       right: 0;
-      color: rgba(14, 14, 14, 0.2);
+      color: ${props => props.theme.colors.g2};
+      opacity: 0.5;
 
       font-size: 12rem;
       z-index: -1;
       line-height: 1em;
 
       @supports (-webkit-text-stroke: 1px black) {
-        -webkit-text-stroke: 1px #0e0e0e;
-        -webkit-text-fill-color: #1a1a1a;
+        -webkit-text-stroke: 2px
+          ${props =>
+            props.theme.title === 'dark'
+              ? props.theme.colors.g1
+              : props.theme.colors.g4};
+        -webkit-text-fill-color: ${props => props.theme.colors.g2};
       }
     }
 
@@ -103,10 +108,11 @@ export const GameListCardStyle = styled.div`
       li {
         padding: 5px;
         border-radius: 5px;
-        background: #0e0e0e;
+        background: ${props => props.theme.colors.g1};
+        color: ${props => props.theme.colors.g7};
 
         &:hover {
-          color: #b2b2b2;
+          color: ${props => props.theme.colors.g8};
         }
       }
     }

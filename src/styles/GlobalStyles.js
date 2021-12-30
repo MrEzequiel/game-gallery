@@ -31,8 +31,8 @@ export default createGlobalStyle`
 
   body {
     font: 400 1.6rem 'Inter', sans-serif;
-    background: #0E0E0E;
-    color: #f7f7f7;
+    background: ${props => props.theme.colors.g1};
+    color: ${props => props.theme.colors.text};
   }
 
   a {

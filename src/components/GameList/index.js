@@ -20,7 +20,10 @@ function GameList() {
       const { json } = await request(
         `https://api.rawg.io/api/games?key=${apiKey}&page=${currentPage}`
       )
-      setGameList(prevGames => [...prevGames, json])
+
+      if (json) {
+        setGameList(prevGames => [...prevGames, json])
+      }
     }
     fetchData()
   }, [request, currentPage])

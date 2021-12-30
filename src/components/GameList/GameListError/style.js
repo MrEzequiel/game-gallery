@@ -23,7 +23,7 @@ export const ErrorStyle = styled.div`
   animation: show-down 500ms forwards cubic-bezier(0.39, 0.575, 0.565, 1);
 
   h4 {
-    color: #b2b2b2;
+    color: ${props => props.theme.colors.g7};
     font-weight: 400;
   }
 `

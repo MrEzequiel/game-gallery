@@ -5,7 +5,7 @@ export const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
 
-  background: #1a1a1a;
+  background: ${props => props.theme.colors.g2};
   box-shadow: 0 8px 8px -2px rgba(0, 0, 0, 0.1);
   padding: 20px 40px;
 
