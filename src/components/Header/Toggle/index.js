@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTheme } from '../../../context/ThemeContext'
+import useTheme from '../../../hooks/useTheme'
 
 import { ToggleStyle } from './style'
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
