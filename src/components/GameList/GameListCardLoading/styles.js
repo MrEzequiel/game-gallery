@@ -1,13 +1,8 @@
 import styled from 'styled-components'
 
 export const GameListLoadingStyle = styled.div`
-  width: 300px;
   height: 350px;
   overflow: hidden;
-
-  @media (max-width: 500px) {
-    width: 100%;
-  }
 
   background: ${props => props.theme.colors.g2};
   border-radius: 10px 10px 0 0;

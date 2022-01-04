@@ -10,8 +10,6 @@ export const GameListCardStyle = styled.div`
     }
   }
 
-  flex: 1;
-  min-width: 300px;
   height: min-content;
   border: 1px solid ${props => props.border};
   background: ${props => props.theme.colors.g2};
