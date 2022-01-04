@@ -1,30 +1,19 @@
 import React from 'react'
-import { ThemeContext } from '../../../context/ThemeContext'
+import { useTheme } from '../../../context/ThemeContext'
 
 import { ToggleStyle } from './style'
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
 
-import darkTheme from '../../../styles/themes/dark'
-import lightTheme from '../../../styles/themes/light'
-
 function ToggleInput() {
-  const contextTheme = React.useContext(ThemeContext)
+  const { toggle, setToggle } = useTheme()
 
-  const [toggle, setToggle] = React.useState(
-    contextTheme.theme.title === 'dark' ? true : false
-  )
-
-  const handleOnChange = () => {
+  function handleChange() {
     setToggle(prev => !prev)
   }
 
-  React.useEffect(() => {
-    contextTheme.setTheme(toggle ? darkTheme : lightTheme)
-  }, [toggle, contextTheme])
-
   return (
     <ToggleStyle>
-      <input type="checkbox" checked={toggle} onChange={handleOnChange} />
+      <input type="checkbox" checked={toggle} onChange={handleChange} />
       <span>{toggle ? <MdLightMode /> : <MdDarkMode />}</span>
     </ToggleStyle>
   )
