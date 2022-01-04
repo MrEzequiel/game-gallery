@@ -5,7 +5,7 @@ import { ToggleStyle } from './style'
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
 
 function ToggleInput() {
-  const { toggle, setToggle } = useTheme()
+  const [toggle, setToggle] = useTheme()
 
   function handleChange() {
     setToggle(prev => !prev)

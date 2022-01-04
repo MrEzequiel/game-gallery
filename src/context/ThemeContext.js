@@ -27,7 +27,7 @@ export function useTheme() {
     setTheme(toggle ? 'dark' : 'light')
   }, [toggle, setTheme])
 
-  return { toggle, setToggle }
+  return [toggle, setToggle]
 }
 
 export default ThemeContextProvider
