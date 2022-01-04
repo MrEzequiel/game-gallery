@@ -16,6 +16,10 @@ export const ToggleStyle = styled.label`
     transform: translateX(45px);
   }
 
+  input:checked + span > svg {
+    transform: translateX(-20px);
+  }
+
   span {
     position: absolute;
     cursor: pointer;
@@ -33,6 +37,12 @@ export const ToggleStyle = styled.label`
 
     svg {
       color: ${props => props.theme.colors.text};
+      transform: translateX(20px);
+    }
+
+    &:hover::before {
+      box-shadow: 0 8px 8px 5px rgba(0, 0, 0, 0.1), 0 0 10px 2px #eb3737;
+      border: 1px solid ${props => props.theme.colors.text};
     }
 
     &::before {
@@ -42,11 +52,13 @@ export const ToggleStyle = styled.label`
       width: 25px;
       border-radius: 50%;
       box-shadow: 0 8px 8px 5px rgba(0, 0, 0, 0.1);
+      border: 1px solid transparent;
 
       left: 0px;
       bottom: -2.5px;
       background: ${props => props.theme.colors.text};
-      transition: transform 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
+      transition: transform 500ms, box-shadow 200ms;
+      transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
     }
   }
 `

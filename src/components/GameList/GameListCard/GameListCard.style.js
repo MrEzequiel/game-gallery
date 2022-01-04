@@ -32,7 +32,7 @@ export const GameListCardStyle = styled.div`
       mask-image: linear-gradient(
         to top,
         rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.8) 50%
+        rgba(0, 0, 0, 1) 20%
       );
     }
   }
@@ -48,7 +48,7 @@ export const GameListCardStyle = styled.div`
     mask-image: linear-gradient(
       to top,
       rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.8) 60%
+      rgba(0, 0, 0, 1) 30%
     );
   }
 
@@ -59,6 +59,7 @@ export const GameListCardStyle = styled.div`
     margin: 0 auto;
     text-align: center;
     background: ${props => props.theme.colors.max};
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.1);
     padding: 5px;
     border-radius: 5px;
   }

@@ -13,7 +13,6 @@ function ToggleInput() {
   const [toggle, setToggle] = React.useState(
     contextTheme.theme.title === 'dark' ? true : false
   )
-  console.log(toggle)
 
   const handleOnChange = () => {
     setToggle(prev => !prev)
@@ -26,7 +25,7 @@ function ToggleInput() {
   return (
     <ToggleStyle>
       <input type="checkbox" checked={toggle} onChange={handleOnChange} />
-      <span>{toggle ? <MdDarkMode /> : <MdLightMode />}</span>
+      <span>{toggle ? <MdLightMode /> : <MdDarkMode />}</span>
     </ToggleStyle>
   )
 }
